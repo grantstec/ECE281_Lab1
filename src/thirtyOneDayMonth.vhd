@@ -66,8 +66,7 @@ end thirtyOneDayMonth;
 architecture thirtyOneDayMonth_arch of thirtyOneDayMonth is 
 	-- include components declarations and signals
     signal w_sel : std_logic_vector (2 downto 0); -- MUX sel
-    signal w_d : std_logic_vector (7 downto 0);
-    signal w_y : std_logic;
+
 	--signals internal to the architecture are declared and initialized such as w_sel
   
 begin
@@ -78,24 +77,17 @@ begin
 	w_sel(1) <= i_B;
 	w_sel(2) <= i_A;
 	
-	w_d(0) <= i_D;
-	w_d(1) <= i_D;
-	w_d(2) <= i_D;
-	w_d(3) <= i_D;
-	w_d(4) <= NOT i_D;
-	w_d(5) <= NOT i_D;
-	w_d(6) <= NOT i_D;
-	w_d(7) <= NOT i_D;
+
 	
 	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.	
-	w_y <= w_d(0) when (w_sel(2) = '0') else
-	         w_d(1) when (w_sel(2) = '0') else
-	         w_d(2) when (w_sel(2) = '0') else
-	         w_d(3) when (w_sel(2) = '0') else
-	         w_d(4) when (w_sel(2) = '1') else
-	         w_d(5) when (w_sel(2) = '1') else
-	         w_d(6) when (w_sel(2) = '1') else
-	         w_d(7) when (w_sel(2) = '1') else
+	o_Y <= i_D when (w_sel = "000") else
+	         i_D when (w_sel = "001") else
+	         i_D when (w_sel = "010") else
+	         i_D when (w_sel = "011") else
+	         NOT i_D when (w_sel = "100") else
+	         NOT i_D when (w_sel = "101") else
+	         NOT i_D when (w_sel = "110") else
+	         NOT i_D when (w_sel = "111") else
 	         '0';
 
 	---------------------------------------------------------------	
