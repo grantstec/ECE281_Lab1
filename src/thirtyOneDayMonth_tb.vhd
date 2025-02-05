@@ -90,11 +90,38 @@ begin
 	test_process : process 
 	begin
 	-- Place test cases here. The first two have been written for you
-		w_sw <= x"0"; wait for 10 ns;
+		w_sw <= "0000"; wait for 10 ns;
             assert w_Y = '0' report "error on x0" severity failure;
-        w_sw <= x"1"; wait for 10 ns;
-            assert w_Y = '1' report "error on Jan" severity failure;   
-
+        w_sw <= "0001"; wait for 10 ns;
+            assert w_Y = '1' report "error on Jan" severity failure;
+        w_sw <= "0010"; wait for 10 ns;
+            assert w_Y = '0' report "error on Feb" severity failure;
+        w_sw <= "0011"; wait for 10 ns;
+            assert w_Y = '1' report "error on Mar" severity failure;
+        w_sw <= "0100"; wait for 10 ns;
+            assert w_Y = '0' report "error on Apr" severity failure;
+        w_sw <= "0101"; wait for 10 ns;
+            assert w_Y = '1' report "error on May" severity failure;
+        w_sw <= "0110"; wait for 10 ns;
+            assert w_Y = '0' report "error on Jun" severity failure;
+        w_sw <= "0111"; wait for 10 ns;
+            assert w_Y = '1' report "error on Jul" severity failure;
+        w_sw <= "1000"; wait for 10 ns;
+            assert w_Y = '1' report "error on Aug" severity failure;                 
+        w_sw <= "1001"; wait for 10 ns;
+            assert w_Y = '0' report "error on Sept" severity failure;
+        w_sw <= "1010"; wait for 10 ns;
+            assert w_Y = '1' report "error on Oct" severity failure;
+        w_sw <= "1011"; wait for 10 ns;
+            assert w_Y = '0' report "error on Nov" severity failure;
+        w_sw <= "1100"; wait for 10 ns;
+            assert w_Y = '1' report "error on Dec" severity failure;
+        w_sw <= "1101"; wait for 10 ns;
+            assert w_Y = '0' report "error on x1" severity failure;
+        w_sw <= "1110"; wait for 10 ns;
+            assert w_Y = '0' report "error on x2" severity failure;       
+        w_sw <= "1111"; wait for 10 ns;
+            assert w_Y = '0' report "error on xD" severity failure;
 		wait; -- wait forever
 	end process;	
 	-----------------------------------------------------	
