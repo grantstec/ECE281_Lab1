@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/C27Grant.Stec/Documents/ECE281/ECE281_Lab1/src/thirtyOneDayMonth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'thirtyOneDayMonth'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/C27Grant.Stec/Documents/ECE281/ECE281_Lab1/src/thirtyOneDayMonth_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'thirtyOneDayMonth_tb'
